@@ -38,7 +38,6 @@
   services.xserver.xkb.options = "caps:escape";
 
   services.pipewire = {
-
     enable = true;
     pulse.enable = true;
   };
@@ -73,7 +72,6 @@
     mpv
     bun
     newsboat
-    nh
     vscode-fhs
     seahorse
     keepassxc
@@ -87,6 +85,10 @@
 
   virtualisation.podman.enable = true;
 
+  programs.nh = {
+    enable = true;
+    flake = "/home/nils/nixos";
+  };
   programs.firefox.enable = true;
   programs.hyprland = {
     enable = true;
