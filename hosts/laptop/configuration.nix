@@ -1,6 +1,7 @@
 {config, pkgs, ... }:
 
 {
+
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     trusted-users = ["nils"];
@@ -17,10 +18,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages;
-  networking.hostName = "bellatrix";
-
-  networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
 
   time.timeZone = "Europe/Berlin";
 
@@ -39,99 +36,17 @@
     LC_MEASUREMENT = "de_DE.UTF-8";
     LC_IDENTIFICATION = "de_DE.UTF-8";
   };
+
   console = {
     font = "Lat2-Terminus16";
     useXkbConfig = true;
   };
-
-  services.xserver.xkb.layout = "eu";
-  services.xserver.xkb.options = "caps:escape";
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
-  services.libinput.enable = true;
 
   users.users.nils = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
       packages = with pkgs; [
     ];
-  };
-
-  environment.systemPackages = with pkgs; [
-    p7zip
-    atuin
-    wget
-    curl
-    ghostty
-    fastfetch
-    nushell
-    stow
-    curlie
-    pavucontrol
-    waybar
-    go
-    rustup
-    git
-    brave
-    discord
-    element-desktop
-    ffmpeg_7
-    yt-dlp
-    mpv
-    bun
-    newsboat
-    vscode-fhs
-    seahorse
-    keepassxc
-    podman-compose
-    lazydocker
-    # podman-desktop
-    killall
-    ripgrep
-    fzf
-    fd
-    fuzzel
-    alacritty
-  ];
-
-  programs.thunderbird.enable = true;
-  virtualisation.podman = {
-    enable = true;
-  };
-  programs.niri = {
-    enable = true;
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.nh = {
-    enable = true;
-    flake = "/home/nils/nixos";
-
-  };
-
-  programs.firefox.enable = true;
-  programs.hyprland = {
-    enable = true;
-  };
-
-  programs.starship.enable = true;
-  programs.lazygit.enable = true;
-  programs.zsh.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  programs.yazi = {
-    enable = true;
   };
 
   # programs.neovim = {
@@ -158,6 +73,15 @@
   services.openssh.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.displayManager.ly.enable = true;
+  services.xserver.xkb.layout = "eu";
+  services.xserver.xkb.options = "caps:escape";
+
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
+
+  services.libinput.enable = true;
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
