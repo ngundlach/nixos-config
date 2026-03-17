@@ -1,12 +1,22 @@
 {config, pkgs, ... }:
 
 {
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    experimental-features = ["nix-command" "flakes"];
+    trusted-users = ["nils"];
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   nixpkgs.config.allowUnfree = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
   networking.hostName = "bellatrix";
 
   networking.networkmanager.enable = true;
@@ -52,6 +62,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    p7zip
+    atuin
     wget
     curl
     ghostty
@@ -67,7 +79,7 @@
     brave
     discord
     element-desktop
-    ffmpeg_7-full
+    ffmpeg_7
     yt-dlp
     mpv
     bun
@@ -76,23 +88,40 @@
     seahorse
     keepassxc
     podman-compose
-    podman-desktop
+    lazydocker
+    # podman-desktop
     killall
     ripgrep
     fzf
     fd
+    fuzzel
+    alacritty
   ];
 
-  virtualisation.podman.enable = true;
+  programs.thunderbird.enable = true;
+  virtualisation.podman = {
+    enable = true;
+  };
+  programs.niri = {
+    enable = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.nh = {
     enable = true;
     flake = "/home/nils/nixos";
+
   };
+
   programs.firefox.enable = true;
   programs.hyprland = {
     enable = true;
   };
+
   programs.starship.enable = true;
   programs.lazygit.enable = true;
   programs.zsh.enable = true;
@@ -100,30 +129,31 @@
     enable = true;
     enableSSHSupport = true;
   };
+
   programs.yazi = {
     enable = true;
+  };
 
-  };
-  programs.neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-      configure = {
-        customRC = ''
-        set number relativenumber
-        set showmatch
-        set hlsearch
-        set tabstop=2
-        set shiftwidth=2
-        set expandtab
-        syntax on
-        set cursorline
-        set ttyfast
-        set list
-        '';
-      };
-  };
+  # programs.neovim = {
+  #     enable = true;
+  #     defaultEditor = true;
+  #     viAlias = true;
+  #     vimAlias = true;
+  #     configure = {
+  #       customRC = ''
+  #       set number relativenumber
+  #       set showmatch
+  #       set hlsearch
+  #       set tabstop=2
+  #       set shiftwidth=2
+  #       set expandtab
+  #       syntax on
+  #       set cursorline
+  #       set ttyfast
+  #       set list
+  #       '';
+  #     };
+  # };
 
   services.openssh.enable = true;
   services.gnome.gnome-keyring.enable = true;
