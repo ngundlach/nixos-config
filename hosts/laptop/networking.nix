@@ -1,6 +1,6 @@
 {config, pkgs, ...}:
 {
-  networking.hostName = "bellatrix";
+  networking.hostName = "maia";
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
 

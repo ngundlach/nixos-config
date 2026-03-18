@@ -18,7 +18,11 @@
     pavucontrol
     waybar
     go
+    golangci-lint
     rustup
+    clang
+    llvm
+    rust-bindgen
     git
     brave
     discord
@@ -52,6 +56,7 @@
     imv
     slurp
     grim
+    podman-desktop
   ];
 
   fonts.packages = [pkgs.nerd-fonts.geist-mono];

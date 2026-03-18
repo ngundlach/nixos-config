@@ -6,6 +6,7 @@
     ./nixvim/plugins/lualine.nix
     ./nixvim/plugins/telescope.nix
     ./nixvim/plugins/neo-tree.nix
+    ./nixvim/plugins/lsp.nix
   ];
 
    programs.nixvim = {

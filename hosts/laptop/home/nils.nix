@@ -114,7 +114,7 @@
         dpi-aware = true;
         hide-before-typing = true;
         lines = 3;
-        cache = "dev/null";
+        cache = "/dev/null";
       };
       colors = {
         background = "1e1e2eff";

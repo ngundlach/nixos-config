@@ -19,7 +19,7 @@
   in {
     nixosConfigurations = {
 
-      bellatrix = nixpkgs.lib.nixosSystem {
+      maia = nixpkgs.lib.nixosSystem {
         inherit system;
 
         modules = [
