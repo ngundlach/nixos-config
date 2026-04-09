@@ -1,7 +1,6 @@
 {config, pkgs, ... }:
 
 {
-
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     trusted-users = ["nils"];
@@ -49,39 +48,6 @@
     ];
   };
 
-  # programs.neovim = {
-  #     enable = true;
-  #     defaultEditor = true;
-  #     viAlias = true;
-  #     vimAlias = true;
-  #     configure = {
-  #       customRC = ''
-  #       set number relativenumber
-  #       set showmatch
-  #       set hlsearch
-  #       set tabstop=2
-  #       set shiftwidth=2
-  #       set expandtab
-  #       syntax on
-  #       set cursorline
-  #       set ttyfast
-  #       set list
-  #       '';
-  #     };
-  # };
-
-  services.openssh.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  services.displayManager.ly.enable = true;
-  services.xserver.xkb.layout = "eu";
-  services.xserver.xkb.options = "caps:escape";
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
-  services.libinput.enable = true;
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #

@@ -26,6 +26,7 @@
           ./hosts/laptop/configuration.nix
           ./hosts/laptop/networking.nix
           ./hosts/laptop/programs.nix
+          ./hosts/laptop/services.nix
           /etc/nixos/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
