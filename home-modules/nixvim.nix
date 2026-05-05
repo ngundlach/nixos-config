@@ -13,9 +13,7 @@
     enable = true;
 		defaultEditor = true;
 		vimAlias = true;
-
  		viAlias = true; 
-
     opts = {
 			termguicolors = true;
 			splitright = true;
@@ -31,6 +29,11 @@
 			showmatch = true;
 			hlsearch = true;
 			expandtab = true;
+      wrap = false;
+      list = true;
+      listchars = {
+        trail = "-";
+      };
     };
     globals = {
 			mapleader = " ";

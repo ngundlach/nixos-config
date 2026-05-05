@@ -6,6 +6,7 @@
     settings = {
       filesystem = {
         filtered_items.hide_dotfiles = false;
+        filtered_items.hide_hidden = false;
       };
       window.width = 25;
     };
