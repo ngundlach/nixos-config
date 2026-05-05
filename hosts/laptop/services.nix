@@ -8,9 +8,33 @@
     options = "caps:escape";
   };
 
+  services.udisks2.enable = true;
+
+  services.tlp.enable = true;
+
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "lock";
+    HandleLidSwitchDocked = "ignore";
+  };
+
+  services.dunst = {
+    enable = false;
+  };
+
+  services.hypridle = {
+    enable = true;
+  };
+
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    audio.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    wireplumber = {
+      enable = true;
+    };
   };
 
   services.libinput.enable = true;

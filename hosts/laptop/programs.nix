@@ -1,11 +1,44 @@
 {config, pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
+    bruno
+    bat
+    gh
+    prettyping
+    libva
+    intel-gpu-tools
+    ncdu
+    mesa-demos
+    chromium
+    flutter
+    xwayland-satellite
+    qalculate-gtk
+    powertop
+    signal-desktop
+    jdk25
+    yt-dlp
+    termdown
+    libnotify
+    kdePackages.dolphin
+    kdePackages.kpat
+    hyprpaper
+    bibata-cursors
+    jetbrains-toolbox
+    brightnessctl
+    playerctl
+    swaylock
+    pulseaudio
+    bluetui
+    impala
+    ntfs3g
+    spotify
     p7zip
-    nemo
+    nemo-with-extensions
+    nemo-seahorse
     nemo-fileroller
     nemo-preview
     nemo-emblems
+    gvfs
     folder-color-switcher
     atuin
     wget
@@ -19,10 +52,8 @@
     waybar
     go
     golangci-lint
-    rustup
     clang
     llvm
-    rust-bindgen
     git
     brave
     discord
@@ -57,14 +88,34 @@
     slurp
     grim
     podman-desktop
+    wev
   ];
 
-  fonts.packages = [pkgs.nerd-fonts.geist-mono];
+  fonts.packages = with pkgs; [
+    nerd-fonts.geist-mono
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+  ];
+
+  programs.localsend = {
+    enable = true;
+    openFirewall = true;
+  };
+
   programs.thunderbird.enable = true;
-  virtualisation.podman = {
+
+  virtualisation = {
+    podman.enable = true;
+    libvirtd.enable = true;
+  };
+
+  programs.virt-manager.enable = true;
+
+  programs.steam = {
     enable = true;
   };
-  
+
   programs.niri = {
     enable = true;
   };
@@ -85,6 +136,7 @@
   };
 
   programs.lazygit.enable = true;
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
