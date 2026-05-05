@@ -7,8 +7,30 @@
       package = pkgs.matcha-gtk-theme;
     };
     iconTheme = {
-      name = "Breeze Dark";
-      package = pkgs.kdePackages.breeze-icons;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+  };
+
+  home.file.".config/kdeglobals".text = ''
+    [Icons]
+    Theme=Papirus-Dark
+  '';
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      cursor-blink = false;
+    };
+  };
+
+  home.pointerCursor = {
+    name = "Bibata-Original-Ice";
+    package = pkgs.bibata-cursors;
   };
 }
