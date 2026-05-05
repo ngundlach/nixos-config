@@ -36,14 +36,9 @@
     LC_IDENTIFICATION = "de_DE.UTF-8";
   };
 
-  console = {
-    font = "Lat2-Terminus16";
-    useXkbConfig = true;
-  };
-
   users.users.nils = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "kvm" "libvirtd" ];
       packages = with pkgs; [
     ];
   };
