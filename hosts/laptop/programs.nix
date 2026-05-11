@@ -1,6 +1,9 @@
 {config, pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
+    tealdeer
+    python3
+    moor
     bruno
     bat
     gh
