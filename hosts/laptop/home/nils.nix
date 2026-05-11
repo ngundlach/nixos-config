@@ -20,6 +20,7 @@
       (p + "/ghostty.nix")
       (p + "/eza.nix")
       (p + "/starship.nix")
+      (p + "/fastfetch.nix")
     ] ++ optional (p +"/git.nix");
 
   services.hyprpaper = {
