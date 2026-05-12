@@ -6,6 +6,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    defaultKeymap = "emacs";
     autocd = true;
     dotDir = "${config.xdg.configHome}/zsh";
     shellAliases = {
@@ -13,6 +14,8 @@
       ff = "fastfetch";
       pp = "prettyping";
       k = "kubectl";
+      nb = "newsboat";
+      open = "xdg-open";
     };
     siteFunctions = {
       take = ''
