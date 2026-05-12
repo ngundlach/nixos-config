@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
+    libsecret
     tealdeer
     python3
     moor
