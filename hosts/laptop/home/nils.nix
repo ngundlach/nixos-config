@@ -21,7 +21,8 @@
       (p + "/eza.nix")
       (p + "/starship.nix")
       (p + "/fastfetch.nix")
-    ] ++ optional (p +"/git.nix");
+    ] ++ optional (p +"/git.nix")
+      ++ optional (p +"/newsboat.nix");
 
   services.hyprpaper = {
     enable = true;
