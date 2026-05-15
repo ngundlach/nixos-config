@@ -22,7 +22,7 @@
       (p + "/starship.nix")
       (p + "/fastfetch.nix")
       (p + "/mime-apps.nix")
-    ] ++ optional (p +"/git.nix")
+    ] ++ optional (p +"/github.nix")
       ++ optional (p +"/newsboat.nix");
 
   services.hyprpaper = {
@@ -39,10 +39,6 @@
         }
       ];
     };
-  };
-
-  programs.gh = {
-    enable = true;
   };
 
   programs.direnv = {
