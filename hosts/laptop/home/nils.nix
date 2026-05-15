@@ -21,6 +21,7 @@
       (p + "/eza.nix")
       (p + "/starship.nix")
       (p + "/fastfetch.nix")
+      (p + "/mime-apps.nix")
     ] ++ optional (p +"/git.nix")
       ++ optional (p +"/newsboat.nix");
 
