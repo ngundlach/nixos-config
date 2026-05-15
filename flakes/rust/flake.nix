@@ -19,6 +19,7 @@
           "rustfmt"
         ])
         rust-analyzer
+        rust-bindgen
         cargo-deny
         cargo-diet
         cargo-info
@@ -31,6 +32,10 @@
         cargo-flamegraph
         cargo-zigbuild
         cargo-feature
+        cargo-expand
+        cargo-ndk
+        cargo-tauri
+        flutter_rust_bridge_codegen
         bacon
       ];
     };
