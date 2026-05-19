@@ -1,6 +1,10 @@
 {config, pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
+    glibc
+    jetbrains.rider
+    jetbrains.idea
+    dotnet-sdk_10
     libsecret
     tealdeer
     python3
@@ -27,7 +31,6 @@
     kdePackages.kpat
     hyprpaper
     bibata-cursors
-    jetbrains-toolbox
     brightnessctl
     playerctl
     swaylock
@@ -94,6 +97,8 @@
     podman-desktop
     wev
   ];
+
+  programs.nix-ld.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.geist-mono
