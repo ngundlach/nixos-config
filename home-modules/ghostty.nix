@@ -6,7 +6,7 @@
     enableBashIntegration = true;
     settings = {
       gtk-single-instance = true;
-      shell-integration-features = "no-cursor";
+      shell-integration-features = "no-cursor,ssh-env";
       command = "${pkgs.zsh}/bin/zsh";
       theme = "TokyoNight";
       cursor-style-blink = false;
