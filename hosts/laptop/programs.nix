@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
+    libreoffice-fresh
     heroic
     glibc
     jetbrains.rider
