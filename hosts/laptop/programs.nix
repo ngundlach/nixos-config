@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
+    heroic
     glibc
     jetbrains.rider
     jetbrains.idea
