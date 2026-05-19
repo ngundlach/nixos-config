@@ -22,7 +22,7 @@
   };
 
   services.dunst = {
-    enable = false;
+    enable = true;
   };
 
   services.hypridle = {
