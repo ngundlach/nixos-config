@@ -3,6 +3,9 @@
   services.openssh.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.displayManager.ly.enable = true;
+  security.pam.services.ly = {
+    enableGnomeKeyring = true;
+  };
   services.xserver.xkb = {
     layout = "eu";
     options = "caps:escape";
