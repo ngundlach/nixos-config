@@ -26,6 +26,7 @@
         "alacritty.nix"
         "github.nix"
         "newsboat.nix"
+        "carapace.nix"
       ];
   in
     lib.concatLists (map optional modules);
