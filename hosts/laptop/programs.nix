@@ -1,88 +1,29 @@
 {config, pkgs, ...}:
-{
-  environment.systemPackages = with pkgs; [
-    libreoffice-fresh
-    heroic
-    glibc
-    jetbrains.rider
-    jetbrains.idea
-    dotnet-sdk_10
-    libsecret
-    tealdeer
-    python3
-    moor
-    bruno
-    bat
-    gh
-    prettyping
-    libva
-    intel-gpu-tools
+let
+  cli = with pkgs; [
+    carapace
     ncdu
-    mesa-demos
-    chromium
-    flutter
-    xwayland-satellite
-    qalculate-gtk
+    bat
+    moor
+    tealdeer
+    iotop
+    prettyping
     powertop
-    signal-desktop
-    jdk25
     yt-dlp
     termdown
-    libnotify
-    kdePackages.dolphin
-    kdePackages.kpat
-    hyprpaper
-    bibata-cursors
     brightnessctl
     playerctl
-    swaylock
-    pulseaudio
     bluetui
     impala
-    ntfs3g
-    spotify
-    p7zip
-    nemo-with-extensions
-    nemo-seahorse
-    nemo-fileroller
-    nemo-preview
-    nemo-emblems
-    gvfs
-    folder-color-switcher
     atuin
     wget
     curl
-    ghostty
     fastfetch
-    nushell
     stow
     curlie
-    pavucontrol
-    waybar
-    go
-    golangci-lint
-    clang
-    llvm
-    git
-    brave
-    discord
-    element-desktop
-    ffmpeg-full
-    yt-dlp
-    mpv
-    bun
-    newsboat
-    vscode-fhs
-    seahorse
-    keepassxc
-    podman-compose
-    lazydocker
     killall
     ripgrep
     fd
-    fuzzel
-    alacritty
-    zed-editor-fhs
     jq
     jqp
     jql
@@ -90,20 +31,93 @@
     dig
     nmap
     htop
+    newsboat
+    lazydocker
+  ];
+
+  dev = with pkgs; [
+    jdk25
+    flutter
+    dotnet-sdk_10
+    python3
+    go
+    golangci-lint
+    clang
+    llvm
+    git
+    gh
+    bun
+    vscode-fhs
+    podman-compose
+    zed-editor-fhs
+    podman-desktop
+    jetbrains.rust-rover
+    jetbrains.rider
+    jetbrains.idea
+  ];
+
+  gui = with pkgs; [
+    ghostty
+    mpv
+    fuzzel
+    alacritty
+    libreoffice-fresh
+    heroic
+    chromium
+    signal-desktop
+    qalculate-gtk
+    kdePackages.dolphin
+    kdePackages.kpat
+    spotify
+    nemo-with-extensions
+    nemo-seahorse
+    nemo-fileroller
+    nemo-preview
+    nemo-emblems
+    discord
+    element-desktop
+    brave
+    seahorse
+    keepassxc
     zathura
     zathuraPkgs.zathura_core
     zathuraPkgs.zathura_pdf_poppler
     imv
+    bruno
+    pavucontrol
+  ];
+in
+{
+
+  environment.systemPackages = with pkgs; [
+    libsecret
+    libva
+    intel-gpu-tools
+    xwayland-satellite
+    libnotify
+    hyprpaper
+    bibata-cursors
+    swaylock
+    pulseaudio
+    ntfs3g
+    p7zip
+    gvfs
+    folder-color-switcher
+    nushell
+    waybar
+    ffmpeg-full
     slurp
     grim
-    podman-desktop
     wev
-  ];
+  ] ++ cli
+    ++ dev
+    ++ gui;
 
   programs.nix-ld.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.geist-mono
+    nerd-fonts.jetbrains-mono
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
@@ -113,8 +127,6 @@
     enable = true;
     openFirewall = true;
   };
-
-  programs.thunderbird.enable = true;
 
   virtualisation = {
     podman.enable = true;
@@ -140,8 +152,10 @@
     flake = "/home/nils/nixos";
   };
 
-  programs.firefox.enable = true;
 
+  programs.thunderbird.enable = true;
+
+  programs.firefox.enable = true;
   programs.hyprland = {
     enable = true;
   };
