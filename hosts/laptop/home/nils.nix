@@ -27,6 +27,8 @@
         "github.nix"
         "newsboat.nix"
         "carapace.nix"
+        "dunst.nix"
+        "gsettings.nix"
       ];
   in
     lib.concatLists (map optional modules);
