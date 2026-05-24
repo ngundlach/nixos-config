@@ -37,9 +37,20 @@
       };
     };
     globals = {
-    mapleader = " ";
-    maplocalleader = " ";
-  };
+      mapleader = " ";
+      maplocalleader = " ";
+    };
+    keymaps = [
+      {
+        action = ":update<CR>";
+        key = "<C-s>";
+        mode = [ "n" ];
+        options = {
+          silent = true;
+          noremap = true;
+        };
+      }
+    ];
     colorschemes.tokyonight = {
       enable = true;
       autoLoad = true;
