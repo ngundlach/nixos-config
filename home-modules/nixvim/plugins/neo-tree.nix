@@ -4,9 +4,12 @@
   programs.nixvim.plugins.neo-tree = {
     enable = true;
     settings = {
+      git_status_async = false;
       filesystem = {
-        filtered_items.hide_dotfiles = false;
-        filtered_items.hide_hidden = false;
+        filtered_items = {
+          visible = true;
+        };
+        use_libuv_file_watcher = true;
       };
       window.width = 25;
     };
