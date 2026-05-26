@@ -57,6 +57,7 @@ let
   ];
 
   gui = with pkgs; [
+    gimp-with-plugins
     ghostty
     mpv
     fuzzel
