@@ -16,6 +16,9 @@
       k = "kubectl";
       nb = "newsboat";
       open = "xdg-open";
+      nhs = "nh os switch path:${config.home.homeDirectory}/nixos";
+      nhu = "nh os switch path:${config.home.homeDirectory}/nixos --update";
+      nhc = "nh clean all";
     };
     siteFunctions = {
       take = ''
