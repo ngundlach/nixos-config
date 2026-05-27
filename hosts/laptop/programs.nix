@@ -36,6 +36,8 @@ let
   ];
 
   dev = with pkgs; [
+    kubectl
+    kubernetes-helm
     jdk25
     flutter
     dotnet-sdk_10
