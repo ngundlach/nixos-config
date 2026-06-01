@@ -59,6 +59,7 @@ let
   ];
 
   gui = with pkgs; [
+    drawy
     gimp-with-plugins
     ghostty
     mpv
