@@ -5,10 +5,11 @@
   home.stateVersion = "26.05";
 
   imports = let 
-      p = ../../../home-modules;
-      mk = file: p + "/${file}";
-      optional = path: lib.optional (builtins.pathExists (mk path)) (mk path);
-      modules = [
+      optional = base: file:
+        let path = base + "/${file}";
+        in lib.optional (builtins.pathExists path) path;
+      sharedModulesPath = ../../../home-modules;
+      sharedModules = map (optional sharedModulesPath) [
         "nixvim.nix"
         "themes.nix"
         "tmux.nix"
@@ -30,8 +31,11 @@
         "dunst.nix"
         "gsettings.nix"
       ];
+      hostModules = map (optional ./.) [
+        "ssh.nix"
+      ];
   in
-    lib.concatLists (map optional modules);
+    lib.concatLists (sharedModules ++ hostModules);
 
 
   services.hypridle = {
