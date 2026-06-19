@@ -56,9 +56,12 @@ let
     jetbrains.rust-rover
     jetbrains.rider
     jetbrains.idea
+    jetbrains.clion
+    texliveFull
   ];
 
   gui = with pkgs; [
+    eloquent
     drawy
     gimp-with-plugins
     ghostty
@@ -94,9 +97,11 @@ in
 {
 
   environment.systemPackages = with pkgs; [
+    e2fsprogs
     libsecret
     libva
     intel-gpu-tools
+    mesa-demos
     xwayland-satellite
     libnotify
     hyprpaper
@@ -113,11 +118,38 @@ in
     slurp
     grim
     wev
+    wl-clipboard
   ] ++ cli
     ++ dev
     ++ gui;
 
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      libX11
+      libXcomposite
+      libXdamage
+      libXext
+      libXfixes
+      libXi
+      libXtst
+      libxcb
+      libXrender
+      libxkbfile
+      libpulseaudio
+      libbsd
+      wayland
+      libpng
+      nss
+      nspr
+      expat
+      mesa
+      glib
+      glibc
+      zlib
+      libdrm
+    ];
+  };
 
   fonts.packages = with pkgs; [
     nerd-fonts.geist-mono
