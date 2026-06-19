@@ -5,6 +5,7 @@
     settings = {
       global = {
         origin = "top-center";
+        offset = "(100, 0)";
       };
       urgency_low = {
         background = "#16161e";
@@ -20,6 +21,9 @@
         background = "#292e42";
         foreground = "#db4b4b";
         frame_color = "#db4b4b";
+      };
+      experimental = {
+        pause_on_mouse_over = true;
       };
     };
   };
