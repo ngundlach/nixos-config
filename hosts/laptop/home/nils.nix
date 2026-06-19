@@ -38,7 +38,7 @@
     enable = true;
     settings = {
       general = {
-        lock_cmd = "pidof swaylock || swaylock -c 000000";
+        lock_cmd = "pidof swaylock || swaylock -e -i ~/Pictures/locked.png -c 000000";
         before_sleep_cmd = "loginctl lock-session";
         after_sleep_cmd = "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'";
       };
@@ -65,12 +65,12 @@
     settings = {
       splash = false;
       preload = [
-        "/home/nils/Pictures/wp12329532-nixos-wallpapers.png"
+        "/home/nils/Pictures/jasa_scaled.jpg"
       ];
       wallpaper = [
         {
           monitor = "";
-          path = "/home/nils/Pictures/wp12329532-nixos-wallpapers.png";
+          path = "/home/nils/Pictures/jasa_scaled.jpg";
           fit_mode = "contain";
         }
       ];
