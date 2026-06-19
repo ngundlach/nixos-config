@@ -57,6 +57,7 @@ let
     jetbrains.rider
     jetbrains.idea
     jetbrains.clion
+    android-studio
     texliveFull
   ];
 

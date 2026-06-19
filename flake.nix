@@ -40,7 +40,7 @@
           ./hosts/laptop/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           rust-flake.nixosModules.rust
-          android-flake.nixosModules.android-sdk
+          # android-flake.nixosModules.android-sdk
           {
             home-manager = {
               useGlobalPkgs = true;
