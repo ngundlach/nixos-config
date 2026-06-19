@@ -17,8 +17,8 @@
           "rust-src"
           "rustc"
           "rustfmt"
+          "rust-analyzer"
         ])
-        rust-analyzer
         rust-bindgen
         cargo-deny
         cargo-diet
