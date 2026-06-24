@@ -33,6 +33,7 @@ let
     htop
     newsboat
     lazydocker
+    translate-shell
   ];
 
   dev = with pkgs; [
