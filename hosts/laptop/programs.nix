@@ -160,6 +160,11 @@ in
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
+    roboto
+    roboto-flex
+    roboto-slab
+    roboto-serif
+    roboto-mono
   ];
 
   programs.localsend = {
