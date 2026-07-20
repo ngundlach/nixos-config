@@ -1,6 +1,11 @@
-{config, pkgs, ...}:
+{pkgs, ...}:
 let
   cli = with pkgs; [
+    zenith
+    fzf
+    pi-coding-agent
+    opencode
+    herdr
     carapace
     ncdu
     bat
@@ -34,6 +39,7 @@ let
     newsboat
     lazydocker
     translate-shell
+    poppler-utils
   ];
 
   dev = with pkgs; [
@@ -60,6 +66,7 @@ let
     jetbrains.clion
     android-studio
     texliveFull
+    luaPackages.tree-sitter-cli
   ];
 
   gui = with pkgs; [
@@ -195,7 +202,6 @@ in
     enable = true;
     flake = "/home/nils/nixos";
   };
-
 
   programs.thunderbird.enable = true;
 
