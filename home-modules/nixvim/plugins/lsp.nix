@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{...}:
 {
   programs.nixvim.lsp = {
     inlayHints.enable = true;

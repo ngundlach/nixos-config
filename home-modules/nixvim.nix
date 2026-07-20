@@ -1,5 +1,4 @@
-{config, pkgs, ...}:
-
+{...}:
 {
   imports = [
     ./nixvim/plugins/mini.nix

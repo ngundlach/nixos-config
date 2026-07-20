@@ -1,6 +1,4 @@
-
-
-{config, pkgs, ...}:
+{...}:
 {
   programs.newsboat = {
     enable = true;
