@@ -7,7 +7,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, fenix, nixpkgs }: {
+  outputs = { fenix, ... }: {
     nixosModules.rust = { pkgs, ... }: {
       nixpkgs.overlays = [ fenix.overlays.default ];
       environment.systemPackages = with pkgs; [
