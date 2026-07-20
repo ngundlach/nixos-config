@@ -1,5 +1,4 @@
-{...}:
-{
+{...}: {
   imports = [
     ./nvf/plugins/ui.nix
     ./nvf/plugins/languages.nix
@@ -33,6 +32,7 @@
           wrap = false;
           list = true;
           listchars = {
+            tab = "  ";
             trail = "-";
           };
         };
@@ -44,7 +44,7 @@
           {
             action = ":update<CR>";
             key = "<C-s>";
-            mode = [ "n" ];
+            mode = ["n"];
             silent = true;
             noremap = true;
           }

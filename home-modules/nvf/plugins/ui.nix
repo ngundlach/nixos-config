@@ -4,6 +4,8 @@
       enable = true;
     };
 
+    visuals.fidget-nvim.enable = true;
+
     mini.icons.enable = true;
 
     filetree.neo-tree = {
