@@ -9,10 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    android-flake = {
-      url = "path:./flakes/android";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # android-flake = {
+    #   url = "path:./flakes/android";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -29,7 +29,7 @@
     # };
   };
 
-  outputs = { nixpkgs, nvf, home-manager, rust-flake, android-flake, ... }:
+  outputs = { nixpkgs, nvf, home-manager, rust-flake, ... }:
   let
     system = "x86_64-linux";
   in {
@@ -45,7 +45,7 @@
           ./hosts/laptop/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           rust-flake.nixosModules.rust
-          android-flake.nixosModules.android-sdk
+          # android-flake.nixosModules.android-sdk
           {
             home-manager = {
               useGlobalPkgs = true;
