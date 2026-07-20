@@ -19,12 +19,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    # };
   };
 
-  outputs = { self, nixpkgs, nixvim, home-manager, rust-flake, android-flake, ... }:
+  outputs = { nixpkgs, nvf, home-manager, rust-flake, android-flake, ... }:
   let
     system = "x86_64-linux";
   in {
@@ -40,12 +45,15 @@
           ./hosts/laptop/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           rust-flake.nixosModules.rust
-          # android-flake.nixosModules.android-sdk
+          android-flake.nixosModules.android-sdk
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              sharedModules = [nixvim.homeModules.nixvim];
+              sharedModules = [
+                # nixvim.homeModules.nixvim
+                nvf.homeManagerModules.default
+              ];
               users.nils = import ./hosts/laptop/home/nils.nix;
             };
           }

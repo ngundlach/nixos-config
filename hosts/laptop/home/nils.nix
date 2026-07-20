@@ -1,16 +1,17 @@
-{config, pkgs, lib, ...}:
+{lib, ...}:
 {
   home.username = "nils";
   home.homeDirectory = "/home/nils";
   home.stateVersion = "26.05";
 
-  imports = let 
+  imports = let
       optional = base: file:
         let path = base + "/${file}";
         in lib.optional (builtins.pathExists path) path;
       sharedModulesPath = ../../../home-modules;
       sharedModules = map (optional sharedModulesPath) [
-        "nixvim.nix"
+        # "nixvim.nix"
+        "nvf.nix"
         "themes.nix"
         "tmux.nix"
         "mpv.nix"
