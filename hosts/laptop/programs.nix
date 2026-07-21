@@ -1,5 +1,4 @@
-{pkgs, ...}:
-let
+{pkgs, ...}: let
   cli = with pkgs; [
     zenith
     fzf
@@ -65,7 +64,7 @@ let
     jetbrains.idea
     jetbrains.clion
     android-studio
-    texliveFull
+    texliveBasic
     luaPackages.tree-sitter-cli
   ];
 
@@ -102,62 +101,85 @@ let
     bruno
     pavucontrol
   ];
-in
-{
-
-  environment.systemPackages = with pkgs; [
-    e2fsprogs
-    libsecret
-    libva
-    intel-gpu-tools
-    mesa-demos
-    xwayland-satellite
-    libnotify
-    hyprpaper
-    bibata-cursors
-    swaylock
-    pulseaudio
-    ntfs3g
-    p7zip
-    gvfs
-    folder-color-switcher
-    nushell
-    waybar
-    ffmpeg-full
-    slurp
-    grim
-    wev
-    wl-clipboard
-  ] ++ cli
+in {
+  environment.systemPackages = with pkgs;
+    [
+      e2fsprogs
+      libsecret
+      libva
+      intel-gpu-tools
+      mesa-demos
+      xwayland-satellite
+      libnotify
+      hyprpaper
+      bibata-cursors
+      swaylock
+      pulseaudio
+      ntfs3g
+      p7zip
+      gvfs
+      folder-color-switcher
+      nushell
+      waybar
+      ffmpeg-full
+      slurp
+      grim
+      wev
+      wl-clipboard
+    ]
+    ++ cli
     ++ dev
     ++ gui;
 
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [
-      libX11
-      libXcomposite
-      libXdamage
-      libXext
-      libXfixes
-      libXi
-      libXtst
-      libxcb
-      libXrender
-      libxkbfile
-      libpulseaudio
-      libbsd
-      wayland
-      libpng
-      nss
-      nspr
-      expat
-      mesa
-      glib
-      glibc
-      zlib
-      libdrm
-    ];
+  programs = {
+    virt-manager.enable = true;
+    steam.enable = true;
+    hyprland.enable = true;
+    niri.enable = true;
+    zsh.enable = true;
+    nh = {
+      enable = true;
+      flake = "/home/nils/nixos";
+    };
+    thunderbird.enable = true;
+    firefox.enable = true;
+    lazygit.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
+
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        libX11
+        libXcomposite
+        libXdamage
+        libXext
+        libXfixes
+        libXi
+        libXtst
+        libxcb
+        libXrender
+        libxkbfile
+        libpulseaudio
+        libbsd
+        wayland
+        libpng
+        nss
+        nspr
+        expat
+        mesa
+        glib
+        glibc
+        zlib
+        libdrm
+      ];
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -174,47 +196,9 @@ in
     roboto-mono
   ];
 
-  programs.localsend = {
-    enable = true;
-    openFirewall = true;
-  };
-
   virtualisation = {
     podman.enable = true;
     libvirtd.enable = true;
-  };
-
-  programs.virt-manager.enable = true;
-
-  programs.steam = {
-    enable = true;
-  };
-
-  programs.niri = {
-    enable = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-  };
-
-  programs.nh = {
-    enable = true;
-    flake = "/home/nils/nixos";
-  };
-
-  programs.thunderbird.enable = true;
-
-  programs.firefox.enable = true;
-  programs.hyprland = {
-    enable = true;
-  };
-
-  programs.lazygit.enable = true;
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
   };
 
   # programs.neovim = {
