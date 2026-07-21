@@ -48,6 +48,8 @@ _: {
       enableTreesitter = true;
       enableExtraDiagnostics = true;
       markdown.enable = true;
+      css.enable = true;
+      json.enable = true;
       tex.enable = true;
       yaml.enable = true;
       lua.enable = true;
