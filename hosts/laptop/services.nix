@@ -1,46 +1,44 @@
-{...}:
-{
-  services.openssh.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  services.displayManager.ly.enable = true;
+_: {
+  services = {
+    openssh.enable = true;
+    gnome.gnome-keyring.enable = true;
+    displayManager.ly.enable = true;
+    xserver.xkb = {
+      layout = "eu";
+      options = "caps:escape";
+    };
+
+    udisks2.enable = true;
+
+    tlp.enable = true;
+
+    logind.settings.Login = {
+      HandleLidSwitch = "sleep";
+      HandleLidSwitchExternalPower = "lock";
+      HandleLidSwitchDocked = "ignore";
+    };
+
+    dunst.enable = true;
+
+    hypridle.enable = true;
+
+    fwupd.enable = true;
+
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      audio.enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      wireplumber = {
+        enable = true;
+      };
+    };
+
+    libinput.enable = true;
+  };
+
   security.pam.services.ly = {
     enableGnomeKeyring = true;
   };
-  services.xserver.xkb = {
-    layout = "eu";
-    options = "caps:escape";
-  };
-
-  services.udisks2.enable = true;
-
-  services.tlp.enable = true;
-
-  services.logind.settings.Login = {
-    HandleLidSwitch = "sleep";
-    HandleLidSwitchExternalPower = "lock";
-    HandleLidSwitchDocked = "ignore";
-  };
-
-  services.dunst = {
-    enable = true;
-  };
-
-  services.hypridle = {
-    enable = true;
-  };
-
-  services.fwupd.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    audio.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    wireplumber = {
-      enable = true;
-    };
-  };
-
-  services.libinput.enable = true;
 }

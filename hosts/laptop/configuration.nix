@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     trusted-users = ["nils"];
@@ -13,10 +11,13 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
 
   time.timeZone = "Europe/Berlin";
 
@@ -38,8 +39,8 @@
 
   users.users.nils = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "kvm" "libvirtd" ];
-      packages = with pkgs; [
+    extraGroups = ["wheel" "kvm" "libvirtd"];
+    packages = with pkgs; [
     ];
   };
 

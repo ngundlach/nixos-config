@@ -1,8 +1,7 @@
-{...}:
-{
+_: {
   programs.nixvim.plugins.dashboard = {
     enable = false;
-		settings = {
+    settings = {
       config = {
         header = [
           "███╗   ██╗██╗███╗   ██╗██╗   ██╗██╗███╗   ███╗"
@@ -16,6 +15,6 @@
         project.enable = false;
         # mru.enable = false;
       };
-		};
+    };
   };
 }

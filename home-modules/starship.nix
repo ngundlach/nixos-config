@@ -1,5 +1,4 @@
-{lib, ...}:
-{
+{lib, ...}: {
   programs.starship = {
     enable = true;
     settings = {
@@ -9,8 +8,8 @@
         "$character"
       ];
       character = {
-       success_symbol = "[λ](bold green)";
-       error_symbol = "[✗](bold red)";
+        success_symbol = "[λ](bold green)";
+        error_symbol = "[✗](bold red)";
       };
       directory = {
         format = lib.concatStrings [

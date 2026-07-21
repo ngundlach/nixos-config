@@ -1,5 +1,4 @@
-{...}:
-{
+_: {
   imports = [
     ./nixvim/plugins/mini.nix
     ./nixvim/plugins/lualine.nix
@@ -9,7 +8,7 @@
     ./nixvim/plugins/gitsigns.nix
   ];
 
-   programs.nixvim = {
+  programs.nixvim = {
     enable = true;
     defaultEditor = true;
     vimAlias = true;
@@ -43,7 +42,7 @@
       {
         action = ":update<CR>";
         key = "<C-s>";
-        mode = [ "n" ];
+        mode = ["n"];
         options = {
           silent = true;
           noremap = true;

@@ -1,43 +1,44 @@
-{lib, ...}:
-{
-  home.username = "nils";
-  home.homeDirectory = "/home/nils";
-  home.stateVersion = "26.05";
+{lib, ...}: {
+  home = {
+    username = "nils";
+    homeDirectory = "/home/nils";
+    stateVersion = "26.05";
+  };
 
   imports = let
-      optional = base: file:
-        let path = base + "/${file}";
-        in lib.optional (builtins.pathExists path) path;
-      sharedModulesPath = ../../../home-modules;
-      sharedModules = map (optional sharedModulesPath) [
-        # "nixvim.nix"
-        "nvf.nix"
-        "themes.nix"
-        "tmux.nix"
-        "mpv.nix"
-        "zsh.nix"
-        "fuzzel.nix"
-        "yazi.nix"
-        "zoxide.nix"
-        "atuin.nix"
-        "ghostty.nix"
-        "eza.nix"
-        "starship.nix"
-        "fastfetch.nix"
-        "mime-apps.nix"
-        "alacritty.nix"
-        "github.nix"
-        "newsboat.nix"
-        "carapace.nix"
-        "dunst.nix"
-        "gsettings.nix"
-      ];
-      hostModules = map (optional ./.) [
-        "ssh.nix"
-      ];
+    optional = base: file: let
+      path = base + "/${file}";
+    in
+      lib.optional (builtins.pathExists path) path;
+    sharedModulesPath = ../../../home-modules;
+    sharedModules = map (optional sharedModulesPath) [
+      # "nixvim.nix"
+      "nvf.nix"
+      "themes.nix"
+      "tmux.nix"
+      "mpv.nix"
+      "zsh.nix"
+      "fuzzel.nix"
+      "yazi.nix"
+      "zoxide.nix"
+      "atuin.nix"
+      "ghostty.nix"
+      "eza.nix"
+      "starship.nix"
+      "fastfetch.nix"
+      "mime-apps.nix"
+      "alacritty.nix"
+      "github.nix"
+      "newsboat.nix"
+      "carapace.nix"
+      "dunst.nix"
+      "gsettings.nix"
+    ];
+    hostModules = map (optional ./.) [
+      "ssh.nix"
+    ];
   in
     lib.concatLists (sharedModules ++ hostModules);
-
 
   services.hypridle = {
     enable = true;

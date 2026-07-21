@@ -1,4 +1,4 @@
-{...}: {
+_: {
   imports = [
     ./nvf/plugins/ui.nix
     ./nvf/plugins/languages.nix

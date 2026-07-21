@@ -29,12 +29,16 @@
     # };
   };
 
-  outputs = { nixpkgs, nvf, home-manager, rust-flake, ... }:
-  let
+  outputs = {
+    nixpkgs,
+    nvf,
+    home-manager,
+    rust-flake,
+    ...
+  }: let
     system = "x86_64-linux";
   in {
     nixosConfigurations = {
-
       maia = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [

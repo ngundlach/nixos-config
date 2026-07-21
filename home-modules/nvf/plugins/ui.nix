@@ -1,4 +1,4 @@
-{
+_: {
   programs.nvf.settings.vim = {
     mini.tabline = {
       enable = true;
@@ -34,7 +34,7 @@
       {
         action = "<Cmd>Neotree toggle<CR>";
         key = "<leader>e";
-        mode = [ "n" "v" "c" ];
+        mode = ["n" "v" "c"];
         noremap = true;
       }
     ];
@@ -44,4 +44,3 @@
     };
   };
 }
-

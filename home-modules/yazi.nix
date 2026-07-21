@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
@@ -9,7 +8,11 @@
     };
     keymap = {
       mgr.prepend_keymap = [
-        {on = "M"; run = "plugin mount"; desc = "Mount drives";}
+        {
+          on = "M";
+          run = "plugin mount";
+          desc = "Mount drives";
+        }
       ];
     };
   };
