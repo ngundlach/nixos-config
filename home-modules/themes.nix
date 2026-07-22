@@ -1,5 +1,4 @@
-{config, pkgs, ...}:
-{
+{pkgs, ...}: {
   gtk = {
     enable = true;
     theme = {
@@ -14,13 +13,11 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "qtct";
+    style.name = "breeze";
   };
 
-  home.file.".config/kdeglobals".text = ''
-    [Icons]
-    Theme=Papirus-Dark
-  '';
+  xdg.configFile."kdeglobals".source = "${pkgs.kdePackages.breeze}/share/color-schemes/BreezeDark.colors";
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -31,6 +28,7 @@
   };
 
   home.pointerCursor = {
+    enable = true;
     name = "Bibata-Original-Ice";
     package = pkgs.bibata-cursors;
   };
