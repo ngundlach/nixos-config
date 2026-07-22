@@ -39,7 +39,7 @@
 
   users.users.nils = {
     isNormalUser = true;
-    extraGroups = ["wheel" "kvm" "libvirtd"];
+    extraGroups = ["wheel" "kvm" "libvirtd" "netbird-wt0"];
     packages = with pkgs; [
     ];
   };

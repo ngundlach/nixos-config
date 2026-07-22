@@ -36,6 +36,15 @@ _: {
     };
 
     libinput.enable = true;
+
+    netbird.clients.wt0 = {
+      port = 51821;
+      autoStart = false;
+      ui.enable = false;
+      openFirewall = true;
+      openInternalFirewall = true;
+    };
+    resolved.enable = true;
   };
 
   security.pam.services.ly = {
