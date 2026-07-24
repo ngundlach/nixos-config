@@ -69,6 +69,7 @@
   ];
 
   gui = with pkgs; [
+    teams-for-linux
     eloquent
     drawy
     gimp-with-plugins
