@@ -47,7 +47,10 @@ _: {
       enableFormat = true;
       enableTreesitter = true;
       enableExtraDiagnostics = true;
-      markdown.enable = true;
+      markdown = {
+        enable = true;
+        extensions.markview-nvim.enable = true;
+      };
       css.enable = true;
       json.enable = true;
       tex.enable = true;
