@@ -114,7 +114,6 @@ in {
       hyprpaper
       bibata-cursors
       swaylock
-      pulseaudio
       ntfs3g
       p7zip
       gvfs
@@ -200,25 +199,4 @@ in {
     podman.enable = true;
     libvirtd.enable = true;
   };
-
-  # programs.neovim = {
-  #     enable = true;
-  #     defaultEditor = true;
-  #     viAlias = true;
-  #     vimAlias = true;
-  #     configure = {
-  #       customRC = ''
-  #       set number relativenumber
-  #       set showmatch
-  #       set hlsearch
-  #       set tabstop=2
-  #       set shiftwidth=2
-  #       set expandtab
-  #       syntax on
-  #       set cursorline
-  #       set ttyfast
-  #       set list
-  #       '';
-  #     };
-  # };
 }
