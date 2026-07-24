@@ -87,6 +87,7 @@
       enable = true;
       enableZshIntegration = true;
     };
+    nushell.enable = true;
     fzf = {
       enable = true;
       enableZshIntegration = true;
