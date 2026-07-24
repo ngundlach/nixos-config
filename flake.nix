@@ -23,10 +23,6 @@
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # nixvim = {
-    #   url = "github:nix-community/nixvim";
-    # };
   };
 
   outputs = {
@@ -55,7 +51,6 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
-                # nixvim.homeModules.nixvim
                 nvf.homeManagerModules.default
               ];
               users.nils = import ./hosts/laptop/home/nils.nix;

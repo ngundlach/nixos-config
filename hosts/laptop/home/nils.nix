@@ -12,7 +12,6 @@
       lib.optional (builtins.pathExists path) path;
     sharedModulesPath = ../../../home-modules;
     sharedModules = map (optional sharedModulesPath) [
-      # "nixvim.nix"
       "nvf.nix"
       "themes.nix"
       "tmux.nix"
@@ -83,14 +82,15 @@
     };
   };
 
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-    historyWidget.command = "";
+  programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+      historyWidget.command = "";
+    };
   };
 }
