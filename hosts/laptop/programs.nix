@@ -42,6 +42,7 @@
   ];
 
   dev = with pkgs; [
+    ansible
     kubectl
     kubernetes-helm
     jdk25
