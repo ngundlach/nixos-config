@@ -45,6 +45,12 @@ _: {
       openInternalFirewall = true;
     };
     resolved.enable = true;
+
+    syncthing = {
+      enable = true;
+      systemService = false;
+      openDefaultPorts = true;
+    };
   };
 
   security.pam.services.ly = {
