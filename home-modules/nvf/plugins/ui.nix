@@ -1,12 +1,14 @@
 _: {
   programs.nvf.settings.vim = {
-    mini.tabline = {
-      enable = true;
+    mini = {
+      ai.enable = true;
+      tabline.enable = true;
+      icons.enable = true;
     };
 
-    visuals.fidget-nvim.enable = true;
+    binds.whichKey.enable = true;
 
-    mini.icons.enable = true;
+    visuals.fidget-nvim.enable = true;
 
     filetree.neo-tree = {
       enable = true;
