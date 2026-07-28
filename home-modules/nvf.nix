@@ -42,7 +42,7 @@ _: {
         };
         keymaps = [
           {
-            action = ":update<CR>";
+            action = ":write<CR>";
             key = "<C-s>";
             mode = ["n"];
             silent = true;
