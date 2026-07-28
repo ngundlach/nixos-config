@@ -1,5 +1,6 @@
 {pkgs, ...}: let
   cli = with pkgs; [
+    imagemagick
     zenith
     fzf
     pi-coding-agent
