@@ -42,5 +42,21 @@ _: {
         ];
       };
     };
+
+    hyprsunset = {
+      enable = true;
+      settings = {
+        profile = [
+          {
+            time = "08:00";
+            identity = true;
+          }
+          {
+            time = "18:00";
+            temperature = 5000;
+          }
+        ];
+      };
+    };
   };
 }
