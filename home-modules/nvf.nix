@@ -4,6 +4,7 @@ _: {
     ./nvf/plugins/languages.nix
     # ./nvf/plugins/oil-nvim.nix
     ./nvf/plugins/editor.nix
+    ./nvf/plugins/snacks.nix
   ];
 
   programs.nvf = {
