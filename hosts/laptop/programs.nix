@@ -55,6 +55,8 @@
     llvm
     git
     gh
+    gh-dash
+    tuicr
     bun
     vscode-fhs
     podman-compose
