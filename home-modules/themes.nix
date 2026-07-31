@@ -2,8 +2,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Matcha-dark-azul";
-      package = pkgs.matcha-gtk-theme;
+      name = "catppuccin-mocha-blue-standard";
+      package = pkgs.catppuccin-gtk.override {
+        variant = "mocha";
+        accents = ["blue"];
+        size = "standard";
+      };
     };
     iconTheme = {
       name = "Papirus-Dark";
