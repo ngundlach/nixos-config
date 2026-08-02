@@ -14,14 +14,20 @@
       package = pkgs.papirus-icon-theme;
     };
   };
-
   qt = {
     enable = true;
-    platformTheme.name = "qtct";
-    style.name = "breeze";
+    style.name = "kvantum";
+    kvantum = {
+      enable = true;
+      themes = [
+        (pkgs.catppuccin-kvantum.override {
+          variant = "mocha";
+          accent = "blue";
+        })
+      ];
+      settings.General.theme = "catppuccin-mocha-blue";
+    };
   };
-
-  xdg.configFile."kdeglobals".source = "${pkgs.kdePackages.breeze}/share/color-schemes/BreezeDark.colors";
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
