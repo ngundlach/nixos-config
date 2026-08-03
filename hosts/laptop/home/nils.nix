@@ -17,6 +17,7 @@
       "tmux.nix"
       "mpv.nix"
       "zsh.nix"
+      "nushell.nix"
       "fuzzel.nix"
       "yazi.nix"
       "zoxide.nix"
@@ -46,7 +47,6 @@
       enable = true;
       enableZshIntegration = true;
     };
-    nushell.enable = true;
     fzf = {
       enable = true;
       enableZshIntegration = true;
