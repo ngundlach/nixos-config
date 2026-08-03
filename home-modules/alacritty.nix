@@ -10,6 +10,9 @@ _: {
           style = "Regular";
         };
       };
+      terminal.shell = {
+        program = "nu";
+      };
     };
   };
 }
