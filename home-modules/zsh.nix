@@ -7,18 +7,8 @@
     defaultKeymap = "emacs";
     autocd = true;
     dotDir = "${config.xdg.configHome}/zsh";
-    shellAliases = {
-      v = "nvim";
-      ff = "fastfetch";
-      pp = "prettyping";
-      k = "kubectl";
-      nb = "newsboat";
-      open = "xdg-open";
-      nhs = "nh os switch path:${config.home.homeDirectory}/nixos";
-      nhu = "nh os switch path:${config.home.homeDirectory}/nixos --update";
-      nhc = "nh clean all";
-      oc = "opencode";
-    };
+    shellAliases =
+      config.home.shellAliases;
     siteFunctions = {
       take = ''
         mkdir -p "$1";

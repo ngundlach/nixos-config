@@ -32,6 +32,7 @@
       "carapace.nix"
       "dunst.nix"
       "gsettings.nix"
+      "shell-aliases.nix"
     ];
     hostModules = map (optional ./.) [
       "ssh.nix"
