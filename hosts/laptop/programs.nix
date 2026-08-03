@@ -124,7 +124,6 @@ in {
       gvfs
       folder-color-switcher
       nushell
-      waybar
       ffmpeg-full
       slurp
       grim
@@ -140,6 +139,7 @@ in {
     steam.enable = true;
     hyprland.enable = true;
     niri.enable = true;
+    waybar.enable = true;
     zsh.enable = true;
     nh = {
       enable = true;
