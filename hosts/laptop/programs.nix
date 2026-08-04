@@ -67,6 +67,7 @@
     jetbrains.rider
     jetbrains.idea
     jetbrains.clion
+    jetbrains.datagrip
     android-studio
     texliveBasic
     luaPackages.tree-sitter-cli
