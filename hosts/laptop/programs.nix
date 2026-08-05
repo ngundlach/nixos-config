@@ -67,7 +67,16 @@
     jetbrains.rider
     jetbrains.idea
     jetbrains.clion
-    jetbrains.datagrip
+    # jetbrains.datagrip
+    (symlinkJoin {
+      name = "datagrip";
+      paths = [jetbrains.datagrip];
+      nativeBuildInputs = [makeWrapper];
+      postBuild = ''
+        wrapProgram "$out/bin/datagrip" \
+          --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [libGL]}"
+      '';
+    })
     android-studio
     texliveBasic
     luaPackages.tree-sitter-cli
