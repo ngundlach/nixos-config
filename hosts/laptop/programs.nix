@@ -92,6 +92,10 @@
     fuzzel
     alacritty
     libreoffice-fresh
+    hunspell
+    hunspellDicts.de_DE
+    hunspellDicts.en_US-large
+    hunspellDicts.en_GB-large
     heroic
     chromium
     signal-desktop
