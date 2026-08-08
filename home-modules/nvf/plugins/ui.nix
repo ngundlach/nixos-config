@@ -6,8 +6,6 @@ _: {
       icons.enable = true;
     };
 
-    notes.todo-comments.enable = true;
-
     binds.whichKey.enable = true;
 
     visuals.fidget-nvim.enable = true;
