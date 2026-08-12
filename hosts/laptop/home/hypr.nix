@@ -1,10 +1,10 @@
-_: {
+{config, ...}: {
   services = {
     hypridle = {
       enable = true;
       settings = {
         general = {
-          lock_cmd = "pidof swaylock || swaylock -e -i ~/Pictures/locked.png -c 000000";
+          lock_cmd = "pidof swaylock || swaylock -e -i ${config.home.homeDirectory}/Pictures/locked.png -c 000000";
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'";
         };
@@ -31,12 +31,12 @@ _: {
       settings = {
         splash = false;
         preload = [
-          "/home/nils/Pictures/jasa_scaled.jpg"
+          "${config.home.homeDirectory}/Pictures/jasa_scaled.jpg"
         ];
         wallpaper = [
           {
             monitor = "";
-            path = "/home/nils/Pictures/jasa_scaled.jpg";
+            path = "${config.home.homeDirectory}/Pictures/jasa_scaled.jpg";
             fit_mode = "contain";
           }
         ];
