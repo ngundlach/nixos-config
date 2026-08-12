@@ -13,6 +13,7 @@
     sharedModulesPath = ../../../home-modules;
     sharedModules = map (optional sharedModulesPath) [
       "nvf.nix"
+      "opencode.nix"
       "themes.nix"
       "tmux.nix"
       "mpv.nix"
