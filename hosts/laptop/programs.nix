@@ -83,6 +83,8 @@
     pi-coding-agent
     opencode
     herdr
+    mcp-nixos
+    openspec
   ];
 
   gui = with pkgs; [
