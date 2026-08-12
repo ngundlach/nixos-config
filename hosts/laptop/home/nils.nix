@@ -26,6 +26,7 @@
       "eza.nix"
       "starship.nix"
       "fastfetch.nix"
+      "herdr.nix"
       "mime-apps.nix"
       "alacritty.nix"
       "github.nix"
