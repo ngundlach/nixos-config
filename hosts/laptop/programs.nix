@@ -3,9 +3,6 @@
     imagemagick
     zenith
     fzf
-    pi-coding-agent
-    opencode
-    herdr
     carapace
     ncdu
     bat
@@ -82,6 +79,12 @@
     luaPackages.tree-sitter-cli
   ];
 
+  ai = with pkgs; [
+    pi-coding-agent
+    opencode
+    herdr
+  ];
+
   gui = with pkgs; [
     teams-for-linux
     eloquent
@@ -146,6 +149,7 @@ in {
     ]
     ++ cli
     ++ dev
+    ++ ai
     ++ gui;
 
   programs = {
