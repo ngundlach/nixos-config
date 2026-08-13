@@ -1,4 +1,15 @@
 {pkgs, ...}: let
+  withLibGL = pkg:
+    pkgs.symlinkJoin {
+      name = pkg.pname;
+      paths = [pkg];
+      nativeBuildInputs = [pkgs.makeWrapper];
+      postBuild = ''
+        wrapProgram "$out/bin/${pkg.pname}" \
+          --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath [pkgs.libGL]}"
+      '';
+    };
+
   cli = with pkgs; [
     imagemagick
     zenith
@@ -60,20 +71,11 @@
     podman-compose
     zed-editor-fhs
     podman-desktop
-    jetbrains.rust-rover
-    jetbrains.rider
-    jetbrains.idea
-    jetbrains.clion
-    # jetbrains.datagrip
-    (symlinkJoin {
-      name = "datagrip";
-      paths = [jetbrains.datagrip];
-      nativeBuildInputs = [makeWrapper];
-      postBuild = ''
-        wrapProgram "$out/bin/datagrip" \
-          --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [libGL]}"
-      '';
-    })
+    (withLibGL jetbrains.rust-rover)
+    (withLibGL jetbrains.rider)
+    (withLibGL jetbrains.idea)
+    (withLibGL jetbrains.clion)
+    (withLibGL jetbrains.datagrip)
     android-studio
     texliveBasic
     luaPackages.tree-sitter-cli
