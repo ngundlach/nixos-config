@@ -3,7 +3,7 @@
   "mcp": {
     "nixos": {
       "command": [
-        "/nix/store/dqw8nsivvqskkbvssbxwlianfyi5w4xc-mcp-nixos-3.0.0/bin/mcp-nixos"
+        "mcp-nixos"
       ],
       "enabled": true,
       "type": "local"
