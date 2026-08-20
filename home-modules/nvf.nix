@@ -1,4 +1,4 @@
-_: {
+{lib, ...}: {
   imports = [
     ./nvf/plugins/ui.nix
     ./nvf/plugins/languages.nix
@@ -56,6 +56,17 @@ _: {
           style = "night";
         };
         git.enable = true;
+        autocmds = [
+          {
+            event = ["TextYankPost"];
+            desc = "Flash highlight selection on yank";
+            callback = lib.generators.mkLuaInline ''
+              function()
+                (vim.hl or vim.highlight).on_yank({ higroup = 'IncSearch', timeout = 350 })
+              end
+            '';
+          }
+        ];
       };
     };
   };
