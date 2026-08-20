@@ -1,4 +1,4 @@
-_: {
+{lib, ...}: {
   programs.nvf.settings.vim = {
     autocomplete.nvim-cmp.enable = true;
     treesitter.enable = true;
@@ -69,5 +69,27 @@ _: {
         extensions.crates-nvim.enable = true;
       };
     };
+
+    diagnostics = {
+      enable = true;
+      config = {
+        virtual_text = true;
+        signs = true;
+        underline = true;
+      };
+    };
+
+    autocmds = [
+      {
+        event = ["BufReadPost"];
+        desc = "Lint nix files on open";
+        callback = lib.mkLuaInline ''
+          function(args)
+            require("lint").try_lint()
+            vim.api.nvim_exec_autocmds("DiagnosticChanged", { buffer = args.buf })
+          end
+        '';
+      }
+    ];
   };
 }
