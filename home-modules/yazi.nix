@@ -4,7 +4,7 @@
     enableZshIntegration = true;
     enableNushellIntegration = true;
     plugins = {
-      mount = pkgs.yaziPlugins.mount;
+      inherit (pkgs.yaziPlugins) mount;
     };
     keymap = {
       mgr.prepend_keymap = [

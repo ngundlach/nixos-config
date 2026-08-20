@@ -7,8 +7,7 @@
     defaultKeymap = "emacs";
     autocd = true;
     dotDir = "${config.xdg.configHome}/zsh";
-    shellAliases =
-      config.home.shellAliases;
+    inherit (config.home) shellAliases;
     siteFunctions = {
       take = ''
         mkdir -p "$1";
