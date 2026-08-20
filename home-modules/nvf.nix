@@ -5,6 +5,7 @@
     # ./nvf/plugins/oil-nvim.nix
     ./nvf/plugins/editor.nix
     ./nvf/plugins/snacks.nix
+    ./nvf/keymaps.nix
   ];
 
   programs.nvf = {
@@ -37,19 +38,6 @@
             trail = "-";
           };
         };
-        globals = {
-          mapleader = " ";
-          maplocalleader = " ";
-        };
-        keymaps = [
-          {
-            action = ":write<CR>";
-            key = "<C-s>";
-            mode = ["n"];
-            silent = true;
-            noremap = true;
-          }
-        ];
         theme = {
           enable = true;
           name = "tokyonight";
