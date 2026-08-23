@@ -98,7 +98,7 @@
     mpv
     fuzzel
     alacritty
-    libreoffice-fresh
+    libreoffice
     hunspell
     hunspellDicts.de_DE
     hunspellDicts.en_US-large
