@@ -20,6 +20,7 @@
           "rust-analyzer"
         ])
         rust-bindgen
+        cargo-insta
         cargo-deny
         cargo-diet
         cargo-info
