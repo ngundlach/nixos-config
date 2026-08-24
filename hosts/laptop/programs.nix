@@ -94,10 +94,8 @@
     eloquent
     drawy
     gimp-with-plugins
-    ghostty
     mpv
     fuzzel
-    alacritty
     libreoffice
     hunspell
     hunspellDicts.de_DE
@@ -163,6 +161,7 @@ in {
     niri.enable = true;
     waybar.enable = true;
     zsh.enable = true;
+    foot.enable = true;
     nh = {
       enable = true;
       flake = "/home/nils/nixos";
