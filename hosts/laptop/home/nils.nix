@@ -35,6 +35,7 @@
       "gsettings.nix"
       "shell-aliases.nix"
       "foot.nix"
+      "nemo.nix"
     ];
     hostModules = map (optional ./.) [
       "ssh.nix"
