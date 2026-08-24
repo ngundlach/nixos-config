@@ -27,6 +27,10 @@
       bindkey "^[[1;5D" backward-word
       bindkey "^[[1;5C" forward-word
       bindkey "^H" backward-kill-word
+      precmd_functions+=(zsh_title_precmd)
+      preexec_functions+=(zsh_title_preexec)
+      function zsh_title_precmd() { print -Pn "\e]0;%~\a"; }
+      function zsh_title_preexec() { print -Pn "\e]0;$1\a"; }
     '';
   };
 }
