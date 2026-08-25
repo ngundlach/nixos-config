@@ -11,6 +11,7 @@
     };
 
   cli = with pkgs; [
+    tokei
     imagemagick
     zenith
     fzf
