@@ -4,7 +4,7 @@
       enable = true;
       settings = {
         general = {
-          lock_cmd = "pidof swaylock || swaylock -e -i ${config.home.homeDirectory}/Pictures/locked.png -c 000000";
+          lock_cmd = "pidof swaylock || swaylock -e -i ${config.home.homeDirectory}/nixos/assets/images/locked.png -c 000000";
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'";
         };
