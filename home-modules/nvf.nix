@@ -50,7 +50,7 @@
             desc = "Flash highlight selection on yank";
             callback = lib.generators.mkLuaInline ''
               function()
-                (vim.hl or vim.highlight).on_yank({ higroup = 'IncSearch', timeout = 350 })
+                (vim.hl or vim.highlight).on_yank({ higroup = 'IncSearch', timeout = 150 })
               end
             '';
           }
