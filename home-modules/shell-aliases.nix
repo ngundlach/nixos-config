@@ -10,5 +10,6 @@
     nhu = "nh os switch path:${config.home.homeDirectory}/nixos --update";
     nhc = "nh clean all";
     oc = "opencode";
+    less = "moor";
   };
 }

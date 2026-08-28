@@ -40,6 +40,7 @@
     hostModules = map (optional ./.) [
       "ssh.nix"
       "hypr.nix"
+      "env.nix"
     ];
   in
     lib.concatLists (sharedModules ++ hostModules);
