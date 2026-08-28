@@ -3,7 +3,7 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    fastSyntaxHighlighting.enable = true;
     defaultKeymap = "emacs";
     autocd = true;
     dotDir = "${config.xdg.configHome}/zsh";
