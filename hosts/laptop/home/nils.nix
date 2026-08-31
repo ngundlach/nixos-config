@@ -50,6 +50,10 @@
       enable = true;
       enableZshIntegration = true;
     };
+    quickshell = {
+      enable = true;
+      systemd.enable = true;
+    };
     fzf = {
       enable = true;
       enableZshIntegration = true;

@@ -125,6 +125,7 @@
     imv
     bruno
     pavucontrol
+    quickshell
   ];
 in {
   environment.systemPackages = with pkgs;
@@ -160,7 +161,6 @@ in {
     steam.enable = true;
     hyprland.enable = true;
     niri.enable = true;
-    waybar.enable = true;
     zsh.enable = true;
     foot.enable = true;
     nh = {

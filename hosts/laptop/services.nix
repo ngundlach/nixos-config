@@ -11,6 +11,7 @@ _: {
     udisks2.enable = true;
 
     tlp.enable = true;
+    upower.enable = true;
 
     logind.settings.Login = {
       HandleLidSwitch = "sleep";
