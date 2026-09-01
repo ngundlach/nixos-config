@@ -1,10 +1,16 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: let
+  swaylock_bin = "${pkgs.swaylock}/bin/swaylock";
+in {
   services = {
     hypridle = {
       enable = true;
       settings = {
         general = {
-          lock_cmd = "pidof swaylock || swaylock -e -i ${config.home.homeDirectory}/nixos/assets/images/locked.png -c 000000";
+          lock_cmd = "pidof ${swaylock_bin} || ${swaylock_bin} -e -i ${config.home.homeDirectory}/nixos/assets/images/locked.png -c 000000";
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'";
         };
