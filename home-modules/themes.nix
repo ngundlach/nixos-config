@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   gtk = {
     enable = true;
+    colorScheme = "dark";
     theme = {
       name = "catppuccin-mocha-blue-standard";
       package = pkgs.catppuccin-gtk.override {
@@ -31,7 +32,6 @@
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
       cursor-blink = false;
       cursor-size = 24;
     };

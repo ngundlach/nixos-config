@@ -156,6 +156,17 @@ in {
     ++ ai
     ++ gui;
 
+  xdg.portal = {
+    enable = true;
+    config.common = {
+      default = "hyprland";
+    };
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
   programs = {
     virt-manager.enable = true;
     steam.enable = true;
