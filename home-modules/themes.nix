@@ -11,8 +11,8 @@
       };
     };
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "candy-icons";
+      package = pkgs.candy-icons;
     };
   };
   qt = {
