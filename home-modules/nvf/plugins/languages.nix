@@ -64,6 +64,7 @@
       bash.enable = true;
       nix.enable = true;
       go.enable = true;
+      odin.enable = true;
       rust = {
         enable = true;
         extensions.crates-nvim.enable = true;

@@ -61,6 +61,7 @@
     python3
     go
     golangci-lint
+    odin
     clang
     llvm
     git
