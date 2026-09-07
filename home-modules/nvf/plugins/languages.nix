@@ -68,12 +68,7 @@
         enable = true;
         extensions.crates-nvim.enable = true;
       };
-      qml = {
-        enable = true;
-        lsp.enable = false;
-        format.enable = true;
-        treesitter.enable = true;
-      };
+      qml.enable = true;
     };
 
     diagnostics = {
