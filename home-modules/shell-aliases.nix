@@ -7,7 +7,9 @@
     nb = "newsboat";
     open = "xdg-open";
     nhs = "nh os switch path:${config.home.homeDirectory}/nixos";
+    nhb = "nh os boot path:${config.home.homeDirectory}/nixos";
     nhu = "nh os switch path:${config.home.homeDirectory}/nixos --update";
+    nhub = "nh os boot path:${config.home.homeDirectory}/nixos --update";
     nhc = "nh clean all";
     oc = "opencode";
     less = "moor";
