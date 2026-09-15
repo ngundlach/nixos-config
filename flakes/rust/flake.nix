@@ -12,13 +12,14 @@
       nixpkgs.overlays = [fenix.overlays.default];
       environment.systemPackages = with pkgs; [
         (pkgs.fenix.stable.withComponents [
-          "cargo"
-          "clippy"
-          "rust-src"
-          "rustc"
-          "rustfmt"
-          "rust-analyzer"
+          # "cargo"
+          # "clippy"
+          # "rust-src"
+          # "rustc"
+          # "rustfmt"
+          # "rust-analyzer"
         ])
+        rustup
         rust-bindgen
         cargo-insta
         cargo-deny
