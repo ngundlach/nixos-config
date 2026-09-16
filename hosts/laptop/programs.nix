@@ -63,6 +63,8 @@
     golangci-lint
     odin
     clang
+    clang-tools
+    gnumake
     llvm
     git
     gh
