@@ -8,6 +8,7 @@
         toast.delivery = "herdr";
         sound.enabled = true;
         prompt_new_tab_name = false;
+        sidebar_start_collapsed = true;
       };
       theme = {
         name = "tokyo-night";
