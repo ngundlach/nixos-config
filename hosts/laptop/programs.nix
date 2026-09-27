@@ -80,7 +80,7 @@
     (withLibGL jetbrains.idea)
     (withLibGL jetbrains.clion)
     (withLibGL jetbrains.datagrip)
-    android-studio
+    (withLibGL android-studio)
     texliveBasic
     luaPackages.tree-sitter-cli
   ];
