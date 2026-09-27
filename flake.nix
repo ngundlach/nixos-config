@@ -48,6 +48,7 @@
           ./hosts/laptop/programs.nix
           ./hosts/laptop/services.nix
           ./hosts/laptop/hardware-configuration.nix
+          ./modules/zed.nix
           home-manager.nixosModules.home-manager
           rust-flake.nixosModules.rust
           # android-flake.nixosModules.android-sdk

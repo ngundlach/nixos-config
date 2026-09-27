@@ -73,7 +73,6 @@
     bun
     vscode-fhs
     podman-compose
-    zed-editor-fhs
     podman-desktop
     (withLibGL jetbrains.rust-rover)
     (withLibGL jetbrains.rider)
