@@ -236,7 +236,10 @@ in {
   ];
 
   virtualisation = {
-    podman.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
     libvirtd.enable = true;
   };
 }
