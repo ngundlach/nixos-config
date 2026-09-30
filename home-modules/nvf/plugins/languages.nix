@@ -62,7 +62,10 @@
       python.enable = true;
       clang.enable = true;
       bash.enable = true;
-      nix.enable = true;
+      nix = {
+        enable = true;
+        lsp.servers = ["nil" "nixd"];
+      };
       go.enable = true;
       odin.enable = true;
       rust = {
