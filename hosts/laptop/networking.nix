@@ -20,6 +20,11 @@ _: {
       enable = true;
       trustedInterfaces = [];
       allowedUDPPorts = [];
+      interfaces.virbr0 = {
+        # qemu vm libvirt
+        allowedUDPPorts = [53 67];
+        allowedTCPPorts = [53];
+      };
     };
     nameservers = [
       "1.1.1.1"

@@ -132,6 +132,7 @@
 in {
   environment.systemPackages = with pkgs;
     [
+      dnsmasq
       e2fsprogs
       libsecret
       libva
