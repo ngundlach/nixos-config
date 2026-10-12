@@ -11,6 +11,7 @@
     };
 
   cli = with pkgs; [
+    trash-cli
     tokei
     imagemagick
     zenith
