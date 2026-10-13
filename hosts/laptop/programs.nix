@@ -11,6 +11,7 @@
     };
 
   cli = with pkgs; [
+    tree
     trash-cli
     tokei
     imagemagick
