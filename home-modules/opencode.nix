@@ -1,9 +1,17 @@
 _: {
   programs.opencode = {
     enable = true;
-    tui = {
-      theme = "tokyonight";
-      attention.enabled = true;
+    cli = {
+      theme = {
+        name = "tokyonight";
+        mode = "system";
+      };
+      attention = {
+        notification = true;
+      };
+      cursor = {
+        blinking = false;
+      };
     };
   };
 }
