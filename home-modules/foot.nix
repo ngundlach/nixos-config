@@ -7,6 +7,7 @@
         shell = "${pkgs.zsh}/bin/zsh";
         font = "MesloLGS Nerd Font:size=12";
       };
+      mouse.hide-when-typing = true;
       colors-dark = {
         foreground = "c0caf5";
         background = "1a1b26";
