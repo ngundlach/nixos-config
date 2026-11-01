@@ -1,6 +1,7 @@
 {config, ...}: {
   programs.nushell = {
     enable = true;
+    loadSessionVariables = true;
     shellAliases =
       config.home.shellAliases
       // {
