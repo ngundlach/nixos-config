@@ -7,6 +7,7 @@ _: {
       freshrss-login `secret-tool lookup freshrss user`
       freshrss-passwordeval \"secret-tool lookup freshrss pw\"
       macro v set browser \"mpv %u --profile=1080p --geometry=1280x720 &\"; open-in-browser-noninteractively;
+      macro f set browser \"setsid -f firefox %u </dev/null >/tmp/mycommand.log 2>&1\"; open-in-browser-noninteractively;
 
       color listnormal         color15 default
       color listnormal_unread  color2  default
