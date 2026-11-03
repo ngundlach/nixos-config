@@ -11,6 +11,7 @@
     };
 
   cli = with pkgs; [
+    wtype
     tree
     trash-cli
     tokei
@@ -196,6 +197,12 @@ in {
   #   # loader.timeout = 0;
   # };
   programs = {
+    hex = {
+      enable = true;
+      package = pkgs.hex.overrideAttrs (_: {
+        doCheck = false;
+      });
+    };
     virt-manager.enable = true;
     steam.enable = true;
     hyprland.enable = true;
