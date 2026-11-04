@@ -96,6 +96,7 @@
   ];
 
   gui = with pkgs; [
+    bitwarden-desktop
     teams-for-linux
     eloquent
     drawy
