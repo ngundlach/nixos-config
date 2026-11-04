@@ -27,11 +27,6 @@
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hex = {
-      url = "github:anomalyco/hex";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -40,7 +35,6 @@
     home-manager,
     rust-flake,
     nixpkgs-statix,
-    hex,
     ...
   }: let
     system = "x86_64-linux";
@@ -55,13 +49,12 @@
           ./hosts/laptop/services.nix
           ./hosts/laptop/hardware-configuration.nix
           ./modules/zed.nix
+          ./modules/hex.nix
           home-manager.nixosModules.home-manager
           rust-flake.nixosModules.rust
-          hex.nixosModules.hex
           # android-flake.nixosModules.android-sdk
           {
             nixpkgs.overlays = [
-              hex.overlays.default
               (final: _prev: {
                 inherit (nixpkgs-statix.legacyPackages.${final.system}) statix;
               })

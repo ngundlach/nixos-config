@@ -197,12 +197,7 @@ in {
   #   # loader.timeout = 0;
   # };
   programs = {
-    hex = {
-      enable = true;
-      package = pkgs.hex.overrideAttrs (_: {
-        doCheck = false;
-      });
-    };
+    hex.enable = true;
     virt-manager.enable = true;
     steam.enable = true;
     hyprland.enable = true;
