@@ -11,6 +11,7 @@
     };
 
   cli = with pkgs; [
+    hydra-check
     wtype
     tree
     trash-cli
