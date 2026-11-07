@@ -4,6 +4,8 @@ _: {
     settings = {
       global = {
         origin = "top-center";
+        monitor = 0;
+        follow = "mouse";
         offset = "(100, 0)";
       };
       urgency_low = {
