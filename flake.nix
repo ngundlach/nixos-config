@@ -8,6 +8,10 @@
       url = "github:NixOS/nixpkgs/01fbdeef22b76df85ea168fbfe1bfd9e63681b30";
     };
 
+    opencode-pin = {
+      url = "github:NixOS/nixpkgs/db379a58acfef9783b46ffde2957dac397c92b85";
+    };
+
     rust-flake = {
       url = "path:./flakes/rust";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +39,7 @@
     home-manager,
     rust-flake,
     nixpkgs-statix,
+    opencode-pin,
     ...
   }: let
     system = "x86_64-linux";
@@ -56,7 +61,10 @@
           {
             nixpkgs.overlays = [
               (final: _prev: {
-                inherit (nixpkgs-statix.legacyPackages.${final.system}) statix;
+                inherit (nixpkgs-statix.legacyPackages.${final.stdenv.hostPlatform.system}) statix;
+              })
+              (final: _prev: {
+                inherit (opencode-pin.legacyPackages.${final.stdenv.hostPlatform.system}) opencode;
               })
             ];
 
