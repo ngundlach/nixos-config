@@ -3,6 +3,6 @@ _: {
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
-    ignoreCase = true;
+    environment.CARAPACE_MATCH = true;
   };
 }
