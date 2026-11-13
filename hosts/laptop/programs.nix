@@ -11,6 +11,7 @@
     };
 
   cli = with pkgs; [
+    lego
     hydra-check
     wtype
     tree
