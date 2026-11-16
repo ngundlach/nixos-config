@@ -11,6 +11,8 @@
     };
 
   cli = with pkgs; [
+    cheese
+    guvcview
     lego
     hydra-check
     wtype
