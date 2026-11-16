@@ -72,7 +72,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
-                nvf.homeManagerModules.default
+                nvf.homeModules.default
               ];
               users.nils = import ./hosts/laptop/home/nils.nix;
             };
