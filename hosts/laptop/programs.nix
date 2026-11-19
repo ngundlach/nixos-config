@@ -59,6 +59,7 @@
   ];
 
   dev = with pkgs; [
+    geckodriver
     ansible
     kubectl
     kubernetes-helm
